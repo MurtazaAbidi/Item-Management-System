@@ -8,8 +8,12 @@ import axios from 'axios'
 const AddNewItemModal = ({ setNewItemModal, setItems, items }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
+        let max = 0;
+        items.forEach((element)=>{
+            element.id>max?max = element.id:null;
+        })
         const requestData = {
-            id: items.length===0?1:items[items.length-1].id+1,
+            id: items.length===0?1:max+1,
             name: e.target.name.value,
             description: e.target.description.value,
             price: e.target.price.value
