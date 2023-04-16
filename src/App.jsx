@@ -24,6 +24,7 @@ const App = () => {
   return (
     <div className='App'>
       <h1>Item Management System</h1>
+      <p>Created By: Murtaza Abidi</p>
       <button className='add-new-item-btn' onClick={()=>{setNewItemModal(true)}}>Add New Item</button>
       <ItemList items={items} setItems={setItems}/>
       {newItemModalOpen ? <AddNewItemModal setNewItemModal={setNewItemModal} setItems={setItems} items={items}/> : null}
