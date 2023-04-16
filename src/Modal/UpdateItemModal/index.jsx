@@ -21,7 +21,7 @@ const UpdateItemModal = ({ setOpenUpdateModal, clickedItem, items, setItems }) =
         await axios.put(`${import.meta.env.VITE_API_URL}/api/items/update/${id}`,requestData)
             .then(res => {
                 console.log(res.data)
-                setItems([...newItemList, requestData])
+                setItems([...newItemList, {...requestData, id:id}])
 
             }).catch(error => {
                 alert(error.message)
