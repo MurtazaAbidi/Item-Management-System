@@ -3,7 +3,7 @@ import './modalStyles.css'
 import {RxCrossCircled} from 'react-icons/rx'
 
 
-const Modal = ({ setOpenModal, clickedItem, items }) => {
+const ShowItemModal = ({ setOpenModal, clickedItem, items }) => {
     return (
         <div className='modal-container'>
             <div className='modal-innerContainer'>
@@ -15,15 +15,15 @@ const Modal = ({ setOpenModal, clickedItem, items }) => {
                 </div>
                 <div className='modal-each-field'>
                     <h3>Description:</h3>
-                    <p>{items[clickedItem].desc}</p>
+                    <p>{items[clickedItem].description}</p>
                 </div>
                 <div className='modal-each-field'>
                     <h3>Price:</h3>
-                    <p>Rs.{items[clickedItem].price}</p>
+                    <p>Rs. {items[clickedItem].price}</p>
                 </div>
             </div>
         </div>
     )
 }
 
-export default Modal
+export default ShowItemModal

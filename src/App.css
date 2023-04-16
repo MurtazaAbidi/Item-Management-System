@@ -16,4 +16,19 @@
   text-align: center;
 }
 
+.add-new-item-btn{
+  position: absolute;
+  right: 20px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.5s ease all;
+}
 
+.add-new-item-btn:hover{
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+  transition: 0.5s ease all;
+  text-decoration: underline;
+
+}
