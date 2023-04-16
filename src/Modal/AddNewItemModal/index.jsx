@@ -9,7 +9,7 @@ const AddNewItemModal = ({ setNewItemModal, setItems, items }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const requestData = {
-            id: items[items.length-1].id+1,
+            id: items.length===0?1:items[items.length-1].id+1,
             name: e.target.name.value,
             description: e.target.description.value,
             price: e.target.price.value
@@ -18,8 +18,6 @@ const AddNewItemModal = ({ setNewItemModal, setItems, items }) => {
             .then(res => {
                 console.log(res.data)
                 setItems((oldData) => [...oldData, requestData])
-                // const persons = res.data;
-                // this.setState({ persons });
             }).catch(error => {
                 alert(error.message)
             })
