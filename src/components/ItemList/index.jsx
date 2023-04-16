@@ -12,7 +12,7 @@ const ItemList = ({ items, setItems }) => {
         const newItemList = items.filter((element)=>{
             return element.id!==id;
         })
-        await axios.delete(`http://localhost:3456/api/items/delete/${id}`)
+        await axios.delete(`${import.meta.env.VITE_API_URL}/api/items/delete/${id}`)
             .then(res => {
                 console.log(res.data)
             }).catch(error => {

@@ -10,7 +10,7 @@ const App = () => {
 
   useEffect(() => {
     // axios.get(`https://backend-item-management-system.vercel.app/api/items`)
-    axios.get(`http://localhost:3456/api/items`)
+    axios.get(`${import.meta.env.VITE_API_URL}/api/items`)
       .then(res => {
         console.log(res.data)
         setItems(res.data)

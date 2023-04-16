@@ -14,7 +14,7 @@ const AddNewItemModal = ({ setNewItemModal, setItems, items }) => {
             description: e.target.description.value,
             price: e.target.price.value
         }
-        await axios.post(`http://localhost:3456/api/items/add`,requestData)
+        await axios.post(`${import.meta.env.VITE_API_URL}/api/items/add`,requestData)
             .then(res => {
                 console.log(res.data)
                 setItems((oldData) => [...oldData, requestData])
