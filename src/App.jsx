@@ -9,20 +9,24 @@ const App = () => {
   const [newItemModalOpen, setNewItemModal] = useState(false)
 
   useEffect(() => {
-    axios.get(`https://backend-item-management-system.vercel.app/api/items`)
+    // axios.get(`https://backend-item-management-system.vercel.app/api/items`)
+    axios.get(`http://localhost:3456/api/items`)
       .then(res => {
         console.log(res.data)
         setItems(res.data)
         // const persons = res.data;
         // this.setState({ persons });
+      }).catch(error => {
+        alert(error.message)
       })
   }, [])
+
   return (
     <div className='App'>
       <h1>Item Management System</h1>
       <button className='add-new-item-btn' onClick={()=>{setNewItemModal(true)}}>Add New Item</button>
-      <ItemList items={items} />
-      {newItemModalOpen ? <AddNewItemModal setNewItemModal={setNewItemModal} items={items} /> : null}
+      <ItemList items={items} setItems={setItems}/>
+      {newItemModalOpen ? <AddNewItemModal setNewItemModal={setNewItemModal} setItems={setItems} items={items}/> : null}
     </div>
   )
 }
